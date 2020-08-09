@@ -7,6 +7,7 @@
     <title>Bank</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
     <div id="login-area">
@@ -75,53 +76,52 @@
             transactionArea.style.display="block";
         })
 
-        // deposit button event handler
-        const depositeBtn=document.getElementById("addDeposite");
-        depositeBtn.addEventListener("click",function(){
-        // const depositeAmount=document.getElementById("depositeAmount").value;
-        // const depositeNumber = parseFloat(depositeAmount);
-        const depositeNumber = getInputNumber("depositeAmount");
+           // deposit button event handler
+            const depositeBtn=document.getElementById("addDeposite");
+             depositeBtn.addEventListener("click",function(){
+           // const depositeAmount=document.getElementById("depositeAmount").value
+           // const depositeNumber = parseFloat(depositeAmount);
+            const depositeNumber = getInputNumber("depositeAmount");
 
-        // const currentDeposite = document.getElementById("currentDeposite").innerText;
-        // const currentDepositeNumber = parseFloat(currentDeposite);
-        // const totalDeposite = depositeNumber + currentDepositeNumber;
-        // document.getElementById("currentDeposite").innerText = totalDeposite;
-        document.getElementById("depositeAmount").value = "";
+           // const currentDeposite = document.getElementById("currentDeposite").innerText;
+           // const currentDepositeNumber = parseFloat(currentDeposite);
+           // const totalDeposite = depositeNumber + currentDepositeNumber;
+           // document.getElementById("currentDeposite").innerText = totalDeposite;
+         document.getElementById("depositeAmount").value = "";
  
-        // const currentBalance = document.getElementById("currentBalance").innerText;
-        // const currentBalanceNumber = parseFloat(currentBalance);
-        // const totalBalance = depositeNumber + currentBalanceNumber;
-        // document.getElementById("currentBalance").innerText = totalBalance;
+           // const currentBalance = document.getElementById("currentBalance").innerText;
+           // const currentBalanceNumber = parseFloat(currentBalance);
+           // const totalBalance = depositeNumber + currentBalanceNumber;
+           // document.getElementById("currentBalance").innerText = totalBalance;
         
-        updateSpanText("currentDeposite", depositeNumber);
-        updateSpanText("currentBalance", depositeNumber);
+           updateSpanText("currentDeposite", depositeNumber);
+           updateSpanText("currentBalance", depositeNumber);
         
         
-        })
-           // withdraw button event handler
+         })
+            // withdraw button event handler
 
-        const WithdrawBtn = document.getElementById("addWithdraw");
-        WithdrawBtn.addEventListener("click", function(){
-            const withdrawNumber = getInputNumber("withdrawAmount")
-        updateSpanText("currentwithdraw", withdrawNumber);
-        updateSpanText("currentBalance", -1 * withdrawNumber);
-        document.getElementById("withdrawAmount").value = "";
+          const WithdrawBtn = document.getElementById("addWithdraw");
+          WithdrawBtn.addEventListener("click", function(){
+          const withdrawNumber = getInputNumber("withdrawAmount")
+          updateSpanText("currentwithdraw", withdrawNumber);
+          updateSpanText("currentBalance", -1 * withdrawNumber);
+          document.getElementById("withdrawAmount").value = "";
       
-        })
-        function getInputNumber(id){
-        const amount = document.getElementById(id).value;
-         const amountNumber = parseFloat(amount);
-         return amountNumber;
- }
+         })
+         function getInputNumber(id){
+         const amount = document.getElementById(id).value;
+          const amountNumber = parseFloat(amount);
+          return amountNumber;
+  }
 
         
         function updateSpanText(id, depositeNumber){
-        const current = document.getElementById(id).innerText;
-        const currentNumber = parseFloat(current);
-        const totalAmount = depositeNumber + currentNumber;
-        document.getElementById(id).innerText = totalAmount;
-
-        }
+         const current = document.getElementById(id).innerText;
+         const currentNumber = parseFloat(current);
+         const totalAmount = depositeNumber + currentNumber;
+         document.getElementById(id).innerText = totalAmount;
+         }
      
 
     </script>
